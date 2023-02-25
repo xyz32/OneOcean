@@ -18,6 +18,10 @@ public class Vessel {
         this(new JSONObject(vesselInfo));
     }
 
+    public List<LocationPoint> getPositions() {
+        return positions;
+    }
+
     public String getName() {
         return name;
     }

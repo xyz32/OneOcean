@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/VesselsDb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/oneocean/geo/GeoNodeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/oneocean/ship/VesselTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/api.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/VesselsDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/VesselsDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/Vessel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/Vessel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -156,13 +152,29 @@
       <option name="project" value="LOCAL" />
       <updated>1677291464565</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add unit test.">
+      <created>1677333344694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677333344694</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implement rest server.">
+      <created>1677333366891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677333366891</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Implement vessel logic.&#10;Implement distance, and average speed calculator." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement vessel logic.&#10;Implement distance, and average speed calculator." />
+    <MESSAGE value="Add unit test." />
+    <MESSAGE value="Implement rest server." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement rest server." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OneOcean$oneocean_in_OneOcean.ic" NAME="oneocean in OneOcean Coverage Results" MODIFIED="1677327577089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
