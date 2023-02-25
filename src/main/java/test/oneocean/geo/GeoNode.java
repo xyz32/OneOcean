@@ -12,7 +12,7 @@ public class GeoNode {
         this.decimalLongitude = decimalLongitude;
     }
 
-    public double distanceToM(GeoNode toNode) {
+    public double distanceToKm(GeoNode toNode) {
         double x = this.decimalLatitude - toNode.decimalLatitude;
         double y = this.decimalLongitude - toNode.decimalLongitude;
         return Math.sqrt(x * x + y * y);

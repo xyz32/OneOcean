@@ -14,6 +14,14 @@ public class Vessel {
     String name;
     List<LocationPoint> positions = new ArrayList<>();
 
+    public Vessel(String vesselInfo) {
+        this(new JSONObject(vesselInfo));
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public Vessel(JSONObject vesselInfo) {
         this.name = vesselInfo.optString(VESSEL_NAME);
 
@@ -26,18 +34,18 @@ public class Vessel {
 
     public double getAverageSpeed() {
         //convert distance to km before using it
-        return (getDistanceTraveledM() / 1000) / (getTravelTime().getSeconds() / 3600d);
+        return getDistanceTraveledKm() / (getTravelTime().getSeconds() / 3600d);
     }
 
     public Duration getTravelTime() {
         return Duration.between(positions.get(0).dateTime, positions.get(positions.size() - 1).dateTime);
     }
 
-    public double getDistanceTraveledM() {
+    public double getDistanceTraveledKm() {
         double distance = 0;
 
         for (int i = 1; i < positions.size(); ++i) {
-            distance = distance + positions.get(i-1).location.distanceToM(positions.get(i).location);
+            distance = distance + positions.get(i-1).location.distanceToKm(positions.get(i).location);
         }
 
         return distance;
