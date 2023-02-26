@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/Alarm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/VesselsDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/LocationPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/LocationPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677369477320</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement proximity alarms.">
+      <created>1677416817900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677416817900</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,7 +193,19 @@
     <MESSAGE value="Add unit test." />
     <MESSAGE value="Implement rest server." />
     <MESSAGE value="Implement api-docs generator." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement api-docs generator." />
+    <MESSAGE value="Implement proximity alarms." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement proximity alarms." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OneOcean$oneocean_in_OneOcean.ic" NAME="oneocean in OneOcean Coverage Results" MODIFIED="1677327577089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

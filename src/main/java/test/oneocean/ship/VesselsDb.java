@@ -47,7 +47,8 @@ public class VesselsDb {
 
     private void computeAlarms(List<Double[]> intersections, Vessel vessel1, Vessel vessel2, List<Alarm> result) {
         for (Double[] intersection: intersections) {
-            if (Duration.between(vessel1.positions.get(intersection[2].intValue()).dateTime, vessel2.positions.get(intersection[2].intValue()).dateTime).toHours() < 1) {
+            if (Duration.between(vessel1.positions.get(intersection[2].intValue()).dateTime, vessel2.positions.get(intersection[2].intValue()).dateTime)
+                    .toHours() < 1) {
                 result.add(new Alarm(new GeoNode(intersection[0], intersection[1]), vessel1, vessel2, vessel1.positions.get(intersection[2].intValue()).dateTime));
             }
         }
@@ -69,7 +70,7 @@ public class VesselsDb {
                         track2Point2.xKm, track2Point2.yKm);
 
                 if (intersect != null) {
-                    result.add(new Double[]{intersect[0], intersect[1], (double) i, (double) j});
+                    result.add(new Double[]{intersect[0], intersect[1], (double) i, (double) j}); //get the segments IDs as well to make it easier to calculate the timestamp.
                 }
             }
         }
@@ -86,27 +87,27 @@ public class VesselsDb {
         double dx = x4 - x3;
         double dy = y4 - y3;
 
-        double b_dot_d_perp = bx * dy - by * dx;
+        double bDotDPerp = bx * dy - by * dx;
 
-        if (b_dot_d_perp == 0) {
+        if (bDotDPerp == 0) {
             return null;
         }
 
         double cx = x3 - x1;
         double cy = y3 - y1;
 
-        double t = (cx * dy - cy * dx) / b_dot_d_perp;
+        double t = (cx * dy - cy * dx) / bDotDPerp;
 
         if (t < 0 || t > 1) {
             return null;
         }
 
-        double u = (cx * by - cy * bx) / b_dot_d_perp;
+        double u = (cx * by - cy * bx) / bDotDPerp;
 
         if (u < 0 || u > 1) {
             return null;
         }
 
-        return new Double[] {x1 + t * bx, y1 + t * by, t};
+        return new Double[] {x1 + t * bx, y1 + t * by};
     }
 }

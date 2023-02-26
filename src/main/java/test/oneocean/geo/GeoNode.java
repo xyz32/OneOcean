@@ -7,9 +7,9 @@ public class GeoNode {
     public double yKm;
     public double xKm;
 
-    public GeoNode(double yKm, double xKm) {
-        this.yKm = yKm;
+    public GeoNode(double xKm, double yKm) {
         this.xKm = xKm;
+        this.yKm = yKm;
     }
 
     public double distanceToKm(GeoNode toNode) {
