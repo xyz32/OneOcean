@@ -9,9 +9,12 @@ import io.undertow.util.Headers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import test.oneocean.geo.LocationPoint;
+import test.oneocean.ship.Alarm;
+import test.oneocean.ship.VesselsDb;
 
 import java.nio.file.Paths;
 import java.util.Deque;
+import java.util.List;
 
 import static io.undertow.Handlers.resource;
 
@@ -87,8 +90,22 @@ public class Server {
     }
 
     private JSONArray getProximityAlarms() {
-        vessels.getAlarms();
-        return new JSONArray();
+        List<Alarm> alarms = vessels.getAlarms();
+        JSONArray result = new JSONArray();
+
+        for (Alarm alarm: alarms) {
+            JSONObject jsonAlarm = new JSONObject();
+            JSONObject gpsLoc = new JSONObject();
+            gpsLoc.put("xKm", alarm.intersection.xKm);
+            gpsLoc.put("yKm", alarm.intersection.yKm);
+            jsonAlarm.put("location", gpsLoc);
+            jsonAlarm.put("vessels", new JSONArray(alarm.vessels));
+            jsonAlarm.put("timestamp", alarm.timestamp.toString());
+
+            result.put(jsonAlarm);
+        }
+
+        return result;
     }
 
     private JSONObject getVesselGpsTrack(Deque<String> vessel) {
@@ -99,10 +116,9 @@ public class Server {
 
         for (LocationPoint entry: vessels.vesselsData.get(veselId).getPositions()) {
             JSONObject gpsTrack = new JSONObject();
-            JSONObject gpsLoc = new JSONObject();
-            gpsLoc.put("decimalLatitude", entry.location.decimalLatitude);
-            gpsLoc.put("decimalLongitude", entry.location.decimalLongitude);
-            gpsTrack.put(entry.dateTime.toString(), gpsLoc);
+            gpsTrack.put("xKm", entry.location.xKm);
+            gpsTrack.put("yKm", entry.location.yKm);
+            gpsTrack.put("timestamp", entry.dateTime.toString());
             data.put(gpsTrack);
         }
 

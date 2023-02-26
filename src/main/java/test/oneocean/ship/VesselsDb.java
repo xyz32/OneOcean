@@ -1,20 +1,19 @@
-package test.oneocean;
+package test.oneocean.ship;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import test.oneocean.geo.GeoNode;
 import test.oneocean.geo.LocationPoint;
-import test.oneocean.ship.Vessel;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.time.Instant;
+import java.time.Duration;
 import java.util.*;
 
 public class VesselsDb {
-    Map<String, Vessel> vesselsData = new HashMap<>();
+    public Map<String, Vessel> vesselsData = new HashMap<>();
 
     public VesselsDb(String source) {
         try {
@@ -32,13 +31,9 @@ public class VesselsDb {
         }
     }
 
-    public void getAlarms() {
-        findIntersectionPoints();
-    }
-
-    private List<Alarms> findIntersectionPoints() {
+    public List<Alarm> getAlarms() {
         Vessel[] mapValues = vesselsData.values().toArray(new Vessel[0]);
-        List<Alarms> result = new ArrayList<>();
+        List<Alarm> result = new ArrayList<>();
         for (int i = 0; i < vesselsData.size()-1; ++i) {
             for (int j = i+1; j < vesselsData.size(); ++j) {
                 List<Double[]> intersections = computeIntersection(mapValues[i].getPositions(), mapValues[j].getPositions());
@@ -50,9 +45,11 @@ public class VesselsDb {
         return result;
     }
 
-    private void computeAlarms(List<Double[]> intersections, Vessel vessel1, Vessel vessel2, List<Alarms> result) {
+    private void computeAlarms(List<Double[]> intersections, Vessel vessel1, Vessel vessel2, List<Alarm> result) {
         for (Double[] intersection: intersections) {
-            
+            if (Duration.between(vessel1.positions.get(intersection[2].intValue()).dateTime, vessel2.positions.get(intersection[2].intValue()).dateTime).toHours() < 1) {
+                result.add(new Alarm(new GeoNode(intersection[0], intersection[1]), vessel1, vessel2, vessel1.positions.get(intersection[2].intValue()).dateTime));
+            }
         }
     }
 
@@ -66,10 +63,10 @@ public class VesselsDb {
                 GeoNode track2Point1 = track2.get(j).location;
                 GeoNode track2Point2 = track2.get(j + 1).location;
 
-                Double[] intersect = getSegSegIntersection(track1Point1.decimalLongitude, track1Point1.decimalLatitude,
-                        track1Point2.decimalLongitude, track1Point2.decimalLatitude,
-                        track2Point1.decimalLongitude, track2Point1.decimalLatitude,
-                        track2Point2.decimalLongitude, track2Point2.decimalLatitude);
+                Double[] intersect = getSegSegIntersection(track1Point1.xKm, track1Point1.yKm,
+                        track1Point2.xKm, track1Point2.yKm,
+                        track2Point1.xKm, track2Point1.yKm,
+                        track2Point2.xKm, track2Point2.yKm);
 
                 if (intersect != null) {
                     result.add(new Double[]{intersect[0], intersect[1], (double) i, (double) j});
@@ -111,10 +108,5 @@ public class VesselsDb {
         }
 
         return new Double[] {x1 + t * bx, y1 + t * by, t};
-    }
-
-    private static class Alarms {
-        public GeoNode intersection;
-        public Instant timestamp;
     }
 }
