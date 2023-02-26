@@ -71,7 +71,7 @@ public class Server {
                                                 .send(getVesselGpsTrack(httpServerExchange.getQueryParameters().get("vessel")).toString());
                                     }
                                 })
-                                .get("/alarms", new HttpHandler() {
+                                .get("/alerts", new HttpHandler() {
                                     @Override
                                     public void handleRequest(HttpServerExchange httpServerExchange) throws Exception {
                                         httpServerExchange.getResponseHeaders()
@@ -83,6 +83,8 @@ public class Server {
                                 })
                         )
                         .addPrefixPath("/docs", resource(new PathResourceManager(Paths.get("target/generated-sources/openapi/index.html"), 100))
+                                .setDirectoryListingEnabled(false))
+                        .addPrefixPath("/index.html", resource(new PathResourceManager(Paths.get("src/main/resources/frontend/index.html"), 100))
                                 .setDirectoryListingEnabled(false))
                 ).build();
 
@@ -130,9 +132,8 @@ public class Server {
         return result;
     }
 
-    private JSONObject buildVesselList() {
-        JSONObject result = new JSONObject();
-        result.put("name", vessels.vesselsData.keySet());
+    private JSONArray buildVesselList() {
+        JSONArray result = new JSONArray(vessels.vesselsData.keySet());
         return result;
     }
 }

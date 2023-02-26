@@ -110,14 +110,14 @@ paths:
                         timestamp:
                           type: string
 
-  /alarms:
+  /alerts:
     get:
       tags:
         - vessels
-      summary: Returns a list of all detected proximity alarms.
+      summary: Returns a list of all detected proximity alerts.
       responses:
         '200':    # status code
-          description: An array of all detected proximity alarms.
+          description: An array of all detected proximity alerts.
           content:
             application/json:
               schema:

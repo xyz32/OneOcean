@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/GeoNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/LocationPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/geo/LocationPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/api.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/api.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -51,6 +51,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/data/xyz/devel/interview/OneOcean/shipTrack/OneOcean/src/test/java/test/oneocean/ship&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -58,8 +59,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/test/oneocean/ship" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="test.oneocean.ship" />
@@ -68,8 +75,8 @@
       <recent name="test.oneocean.ship" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="test.oneocean.geo" />
       <recent name="test.oneocean.ship" />
+      <recent name="test.oneocean.geo" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -101,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VesselTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VesselsDbTest.getAlarms" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OneOcean" />
       <extension name="coverage">
         <pattern>
@@ -110,8 +117,17 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.oneocean.ship" />
-      <option name="MAIN_CLASS_NAME" value="test.oneocean.ship.VesselTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="test.oneocean.ship.VesselsDbTest" />
+      <option name="METHOD_NAME" value="getAlarms" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in OneOcean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneOcean" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,8 +144,9 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.oneocean in OneOcean" />
+        <item itemvalue="JUnit.VesselsDbTest.getAlarms" />
+        <item itemvalue="JUnit.java in OneOcean" />
         <item itemvalue="JUnit.GeoNodeTest" />
-        <item itemvalue="JUnit.VesselTest" />
       </list>
     </recent_temporary>
   </component>
@@ -184,31 +201,44 @@
       <option name="project" value="LOCAL" />
       <updated>1677416817900</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix inverted coordinates.">
+      <created>1677417462881</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677417462881</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add unit test.">
+      <created>1677419971376</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677419971376</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Finish api docs.">
+      <created>1677422463610</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677422463610</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Implement vessel logic.&#10;Implement distance, and average speed calculator." />
-    <MESSAGE value="Add unit test." />
     <MESSAGE value="Implement rest server." />
     <MESSAGE value="Implement api-docs generator." />
     <MESSAGE value="Implement proximity alarms." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement proximity alarms." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/test/oneocean/ship/VesselsDb.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fix inverted coordinates." />
+    <MESSAGE value="Add unit test." />
+    <MESSAGE value="Finish api docs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish api docs." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OneOcean$oneocean_in_OneOcean.ic" NAME="oneocean in OneOcean Coverage Results" MODIFIED="1677327577089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OneOcean$java_in_OneOcean.ic" NAME="java in OneOcean Coverage Results" MODIFIED="1677417470855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OneOcean$oneocean_in_OneOcean.ic" NAME="oneocean in OneOcean Coverage Results" MODIFIED="1677419915473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OneOcean$GeoNodeTest.ic" NAME="GeoNodeTest Coverage Results" MODIFIED="1677327367997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.oneocean.geo.*</FILTER>
     </SUITE>

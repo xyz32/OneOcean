@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<h4>Extra Info</h4>
+<h5 id="alerts">Proximity Alerts:</h5>
+<h5 id="extraInfo">Vessels Info:</h5>
+
+<script>
+    var chart;
+    initializeData();
+
+    function initializeData() {
+        chart = new Chart("myChart", {
+          type: "scatter",
+          options: {
+            legend: {display: true},
+            title: {
+               display: true,
+               text: 'OneOcean vessel chart.'
+            },
+          }
+        });
+
+        chart.data.labels = new Set();
+
+        fetch('/api/vessels')
+            .then(response => response.json())
+            .then(data => fetchVessels(data));
+
+        fetch('/api/alerts')
+            .then(response => response.json())
+            .then(data => updateAlerts(data));
+    }
+
+    function updateAlerts(alerts) {
+        console.log(alerts);
+    }
+
+    function fetchVessels(vessels) {
+        vessels.forEach(vessel => {
+            fetch('/api/' + vessel + '/gpsTrack/')
+                .then(response => response.json())
+                .then(data => pushToChart(data));
+            fetch('/api/' + vessel + '/averageSpeed/')
+                .then(response => response.json())
+                .then(data => console.log(data));
+            fetch('/api/' + vessel + '/distanceTraveled/')
+                .then(response => response.json())
+                .then(data => console.log(data));
+        })
+    }
+
+    function pushToChart(data) {
+        var xData = new Array();
+        var yData = new Array();
+
+        var newDataset = {
+            label: data.name,
+            fill: false,
+            showLine: true,
+            backgroundColor: getRandomColor(),
+            borderColor: getRandomColor(),
+            data: []
+        };
+        console.log(data);
+        data.gpsTrack.forEach((element) => {
+            newDataset.data.push({x: element.xKm, y: element.yKm});
+        });
+        chart.data.datasets.push(newDataset);
+        chart.update();
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>
