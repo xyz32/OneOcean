@@ -48,5 +48,6 @@ public class VesselTest {
 
         assertEquals("Average speed", 18.542757699464733, testVessel.getAverageSpeed(), 0.1);
         assertEquals("Distance traveled", 47.284032133635066, testVessel.getDistanceTraveledKm(), 0.1);
+        assertEquals("Vessel to json", "{\"yKm\":5,\"xKm\":5,\"timestamp\":\"2020-01-01T07:40:00Z\"}", testVessel.getPositions().get(0).toJson().toString());
     }
 }

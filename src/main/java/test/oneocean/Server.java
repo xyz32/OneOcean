@@ -94,15 +94,7 @@ public class Server {
         JSONArray result = new JSONArray();
 
         for (Alarm alarm: alarms) {
-            JSONObject jsonAlarm = new JSONObject();
-            JSONObject gpsLoc = new JSONObject();
-            gpsLoc.put("xKm", alarm.intersection.xKm);
-            gpsLoc.put("yKm", alarm.intersection.yKm);
-            jsonAlarm.put("location", gpsLoc);
-            jsonAlarm.put("vessels", new JSONArray(alarm.vessels));
-            jsonAlarm.put("timestamp", alarm.timestamp.toString());
-
-            result.put(jsonAlarm);
+            result.put(alarm.toJson());
         }
 
         return result;
@@ -115,11 +107,7 @@ public class Server {
         JSONArray data = new JSONArray();
 
         for (LocationPoint entry: vessels.vesselsData.get(veselId).getPositions()) {
-            JSONObject gpsTrack = new JSONObject();
-            gpsTrack.put("xKm", entry.location.xKm);
-            gpsTrack.put("yKm", entry.location.yKm);
-            gpsTrack.put("timestamp", entry.dateTime.toString());
-            data.put(gpsTrack);
+            data.put(entry.toJson());
         }
 
         result.put("gpsTrack", data);

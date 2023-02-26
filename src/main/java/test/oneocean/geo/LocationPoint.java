@@ -18,4 +18,12 @@ public class LocationPoint {
         TemporalAccessor temporalAccessor = DateTimeFormatter.ISO_ZONED_DATE_TIME.parse(locationObject.optString(TIME_STAMP));
         this.dateTime = Instant.from(temporalAccessor);
     }
+
+    public JSONObject toJson() {
+        JSONObject gpsTrack = new JSONObject();
+        gpsTrack.put("xKm", this.location.xKm);
+        gpsTrack.put("yKm", this.location.yKm);
+        gpsTrack.put("timestamp", this.dateTime.toString());
+        return gpsTrack;
+    }
 }

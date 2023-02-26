@@ -47,9 +47,9 @@ public class VesselsDb {
 
     private void computeAlarms(List<Double[]> intersections, Vessel vessel1, Vessel vessel2, List<Alarm> result) {
         for (Double[] intersection: intersections) {
-            if (Duration.between(vessel1.positions.get(intersection[2].intValue()).dateTime, vessel2.positions.get(intersection[2].intValue()).dateTime)
+            if (Duration.between(vessel1.getPositions().get(intersection[2].intValue()).dateTime, vessel2.getPositions().get(intersection[2].intValue()).dateTime)
                     .toHours() < 1) {
-                result.add(new Alarm(new GeoNode(intersection[0], intersection[1]), vessel1, vessel2, vessel1.positions.get(intersection[2].intValue()).dateTime));
+                result.add(new Alarm(new GeoNode(intersection[0], intersection[1]), vessel1, vessel2, vessel1.getPositions().get(intersection[2].intValue()).dateTime));
             }
         }
     }
