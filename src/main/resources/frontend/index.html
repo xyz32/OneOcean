@@ -4,8 +4,10 @@
 <body>
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 <h4>Extra Info</h4>
-<h5 id="alerts">Proximity Alerts:</h5>
-<h5 id="extraInfo">Vessels Info:</h5>
+<h5>Proximity Alerts:</h5>
+<h6 id="alerts"></h6>
+<h5>Vessels Info:</h5>
+<h6 id="extraInfo"></h6>
 
 <script>
     var chart;
@@ -35,7 +37,18 @@
     }
 
     function updateAlerts(alerts) {
-        console.log(alerts);
+        alerts.forEach(element => {
+                var para = document.createElement("p");
+                para.innerHTML = "Timestamp: " + element.timestamp;
+                document.getElementById("alerts").appendChild(para);
+                para = document.createElement("p");
+                para.innerHTML = "Location: " + element.location.xKm + " " + element.location.yKm;
+                document.getElementById("alerts").appendChild(para);
+                para = document.createElement("p");
+                para.innerHTML = "Location: " + element.vessels;
+                document.getElementById("alerts").appendChild(para);
+                document.getElementById("alerts").appendChild(document.createElement("br"));
+            })
     }
 
     function fetchVessels(vessels) {
@@ -45,11 +58,39 @@
                 .then(data => pushToChart(data));
             fetch('/api/' + vessel + '/averageSpeed/')
                 .then(response => response.json())
-                .then(data => console.log(data));
+                .then(data => updateVesselSpeed(data));
             fetch('/api/' + vessel + '/distanceTraveled/')
                 .then(response => response.json())
-                .then(data => console.log(data));
+                .then(data => updateVesselDistance(data));
         })
+    }
+
+    function updateVesselSpeed(data) {
+        var vesselInfo = getContainerOrCreate(data.name)
+
+        var para = document.createElement("p");
+        para.innerHTML = "Average Speed: " + data.averageSpeedKph;
+        vesselInfo.appendChild(para);
+    }
+
+    function updateVesselDistance(data) {
+        var vesselInfo = getContainerOrCreate(data.name)
+
+        var para = document.createElement("p");
+        para.innerHTML = "Distance Traveled Km: " + data.distanceTraveledKm;
+        vesselInfo.appendChild(para);
+    }
+
+    function getContainerOrCreate(vesselName) {
+        var vesselInfo = document.getElementById(vesselName)
+        if (vesselInfo == null) {
+            vesselInfo = document.createElement("p");
+            vesselInfo.setAttribute("id", vesselName);
+            vesselInfo.innerHTML = vesselName;
+            document.getElementById("extraInfo").appendChild(vesselInfo);
+        }
+
+        return vesselInfo;
     }
 
     function pushToChart(data) {
@@ -64,7 +105,6 @@
             borderColor: getRandomColor(),
             data: []
         };
-        console.log(data);
         data.gpsTrack.forEach((element) => {
             newDataset.data.push({x: element.xKm, y: element.yKm});
         });

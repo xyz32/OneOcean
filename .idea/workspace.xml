@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/oneocean/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/api.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/api.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677422463610</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implement plotting in front-end.">
+      <created>1677442676048</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677442676048</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -234,7 +239,8 @@
     <MESSAGE value="Fix inverted coordinates." />
     <MESSAGE value="Add unit test." />
     <MESSAGE value="Finish api docs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish api docs." />
+    <MESSAGE value="Implement plotting in front-end." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement plotting in front-end." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OneOcean$java_in_OneOcean.ic" NAME="java in OneOcean Coverage Results" MODIFIED="1677417470855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
