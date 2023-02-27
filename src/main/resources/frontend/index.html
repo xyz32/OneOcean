@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>OneOcean vessels report</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<body>
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-<h4>Extra Info</h4>
-<h5>Proximity Alerts:</h5>
-<h6 id="alerts"></h6>
-<h5>Vessels Info:</h5>
-<h6 id="extraInfo"></h6>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+
+    <div class="w3-panel">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-third">
+                <h5>Chart</h5>
+                <canvas id="myChart" style="width:100%"></canvas>
+            </div>
+            <div class="w3-twothird">
+                <h5>Alerts</h5>
+                <table id="alerts" class="w3-table w3-striped w3-white">
+                    <tr>
+                        <th>Location</th>
+                        <th>Vessels</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="w3-container">
+        <h5>Vessels</h5>
+        <table id = "extraInfo" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+                <th>Vessel name</th>
+                <th>Average Speed (kph)</th>
+                <th>Distance traveled (km)</th>
+            </tr>
+        </table><br>
+        <a href="/docs" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  API Docs</a>
+    </div>
+    <hr>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <h4>FOOTER</h4>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+    <!-- End page content -->
+</div>
 
 <script>
     var chart;
@@ -38,17 +92,17 @@
 
     function updateAlerts(alerts) {
         alerts.forEach(element => {
-                var para = document.createElement("p");
-                para.innerHTML = "Timestamp: " + element.timestamp;
-                document.getElementById("alerts").appendChild(para);
-                para = document.createElement("p");
-                para.innerHTML = "Location: " + element.location.xKm + " " + element.location.yKm;
-                document.getElementById("alerts").appendChild(para);
-                para = document.createElement("p");
-                para.innerHTML = "Location: " + element.vessels;
-                document.getElementById("alerts").appendChild(para);
-                document.getElementById("alerts").appendChild(document.createElement("br"));
-            })
+                var table = document.getElementById("alerts")
+                var trEntry = table.insertRow(-1);
+                var cell = trEntry.insertCell(0);
+                cell.innerHTML = element.location.xKm + " " + element.location.yKm;
+
+                cell = trEntry.insertCell(1);
+                cell.innerHTML = element.vessels;
+
+                cell = trEntry.insertCell(2);
+                cell.innerHTML = element.timestamp;
+            });
     }
 
     function fetchVessels(vessels) {
@@ -68,26 +122,27 @@
     function updateVesselSpeed(data) {
         var vesselInfo = getContainerOrCreate(data.name)
 
-        var para = document.createElement("p");
-        para.innerHTML = "Average Speed: " + data.averageSpeedKph;
-        vesselInfo.appendChild(para);
+        var para = vesselInfo.cells[1];
+        para.innerHTML = data.averageSpeedKph;
     }
 
     function updateVesselDistance(data) {
         var vesselInfo = getContainerOrCreate(data.name)
 
-        var para = document.createElement("p");
-        para.innerHTML = "Distance Traveled Km: " + data.distanceTraveledKm;
-        vesselInfo.appendChild(para);
+        var para = vesselInfo.cells[2];
+        para.innerHTML = data.distanceTraveledKm;
     }
 
     function getContainerOrCreate(vesselName) {
         var vesselInfo = document.getElementById(vesselName)
         if (vesselInfo == null) {
-            vesselInfo = document.createElement("p");
+            var table = document.getElementById("extraInfo");
+            vesselInfo = table.insertRow(-1);
             vesselInfo.setAttribute("id", vesselName);
-            vesselInfo.innerHTML = vesselName;
-            document.getElementById("extraInfo").appendChild(vesselInfo);
+            var cell = vesselInfo.insertCell(0);
+            cell.innerHTML = vesselName;
+            vesselInfo.insertCell(1);
+            vesselInfo.insertCell(2);
         }
 
         return vesselInfo;
