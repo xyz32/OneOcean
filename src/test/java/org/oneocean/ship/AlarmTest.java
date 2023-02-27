@@ -1,8 +1,7 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
-import org.json.JSONObject;
 import org.junit.Test;
-import test.oneocean.geo.GeoNode;
+import org.oneocean.geo.GeoNode;
 
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;

@@ -1,4 +1,4 @@
-package test.oneocean.geo;
+package org.oneocean.geo;
 
 import org.json.JSONObject;
 

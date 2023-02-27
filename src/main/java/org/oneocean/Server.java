@@ -1,4 +1,4 @@
-package test.oneocean;
+package org.oneocean;
 
 import io.undertow.Handlers;
 import io.undertow.Undertow;
@@ -8,9 +8,9 @@ import io.undertow.server.handlers.resource.PathResourceManager;
 import io.undertow.util.Headers;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import test.oneocean.geo.LocationPoint;
-import test.oneocean.ship.Alarm;
-import test.oneocean.ship.VesselsDb;
+import org.oneocean.geo.LocationPoint;
+import org.oneocean.ship.Alarm;
+import org.oneocean.ship.VesselsDb;
 
 import java.nio.file.Paths;
 import java.util.Deque;

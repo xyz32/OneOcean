@@ -1,8 +1,8 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import test.oneocean.geo.LocationPoint;
+import org.oneocean.geo.LocationPoint;
 
 import java.time.Duration;
 import java.util.ArrayList;

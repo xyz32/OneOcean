@@ -1,4 +1,4 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
 import org.junit.Test;
 

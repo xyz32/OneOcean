@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -227,8 +226,47 @@
       <option name="project" value="LOCAL" />
       <updated>1677442676048</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implement vessel information.">
+      <created>1677444983356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677444983356</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add readme.md">
+      <created>1677503662696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677503662696</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Use a w3c template.">
+      <created>1677517784417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677517784417</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Do code-review.">
+      <created>1677517919833</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677517919833</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
@@ -240,7 +278,15 @@
     <MESSAGE value="Add unit test." />
     <MESSAGE value="Finish api docs." />
     <MESSAGE value="Implement plotting in front-end." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement plotting in front-end." />
+    <MESSAGE value="Implement vessel information." />
+    <MESSAGE value="Add readme.md" />
+    <MESSAGE value="Use a w3c template." />
+    <MESSAGE value="Do code-review." />
+    <option name="LAST_COMMIT_MESSAGE" value="Do code-review." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OneOcean$java_in_OneOcean.ic" NAME="java in OneOcean Coverage Results" MODIFIED="1677417470855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

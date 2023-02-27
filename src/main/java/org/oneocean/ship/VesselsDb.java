@@ -1,10 +1,10 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import test.oneocean.geo.GeoNode;
-import test.oneocean.geo.LocationPoint;
+import org.oneocean.geo.GeoNode;
+import org.oneocean.geo.LocationPoint;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

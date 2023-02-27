@@ -1,6 +1,6 @@
-package test.oneocean;
+package org.oneocean;
 
-import test.oneocean.ship.VesselsDb;
+import org.oneocean.ship.VesselsDb;
 
 public class Main {
     public static void main(String[] args) {

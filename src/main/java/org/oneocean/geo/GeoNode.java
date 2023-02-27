@@ -1,4 +1,4 @@
-package test.oneocean.geo;
+package org.oneocean.geo;
 
 public class GeoNode {
     public static final double EARTH_RADIUS_M = 6378137;

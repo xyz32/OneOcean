@@ -1,8 +1,7 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
 import org.junit.Test;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.List;
 
 import static org.junit.Assert.*;

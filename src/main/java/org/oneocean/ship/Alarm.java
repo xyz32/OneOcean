@@ -1,8 +1,8 @@
-package test.oneocean.ship;
+package org.oneocean.ship;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import test.oneocean.geo.GeoNode;
+import org.oneocean.geo.GeoNode;
 
 import java.time.Instant;
 
