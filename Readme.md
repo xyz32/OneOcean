@@ -18,3 +18,7 @@ Open a browser and navigate to:
   - for the main app
 - http://localhost:8080/docs
   - to see the API docs. Requires the `mvn clean install` command to be executed at least once.
+
+## Preview
+
+![plot](./Screenshot_20230227_122831.png)

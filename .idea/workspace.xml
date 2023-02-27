@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="87c1d045-a97d-4cb5-97fc-d47552c0f126" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,63 +77,16 @@
       <recent name="test.oneocean.geo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.oneocean.Main" />
+      <option name="MAIN_CLASS_NAME" value="org.oneocean.Main" />
       <module name="OneOcean" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.oneocean.ship.*" />
+          <option name="PATTERN" value="org.oneocean.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeoNodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OneOcean" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.oneocean.geo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.oneocean.geo" />
-      <option name="MAIN_CLASS_NAME" value="test.oneocean.geo.GeoNodeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VesselsDbTest.getAlarms" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OneOcean" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.oneocean.ship.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.oneocean.ship" />
-      <option name="MAIN_CLASS_NAME" value="test.oneocean.ship.VesselsDbTest" />
-      <option name="METHOD_NAME" value="getAlarms" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in OneOcean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OneOcean" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="oneocean in OneOcean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OneOcean" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/test/oneocean" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,10 +94,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.oneocean in OneOcean" />
-        <item itemvalue="JUnit.VesselsDbTest.getAlarms" />
-        <item itemvalue="JUnit.java in OneOcean" />
-        <item itemvalue="JUnit.GeoNodeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677517919833</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Rename package.">
+      <created>1677518639595</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677518639595</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Remove chart title.">
+      <created>1677518819899</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677518819899</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +246,9 @@
     <MESSAGE value="Add readme.md" />
     <MESSAGE value="Use a w3c template." />
     <MESSAGE value="Do code-review." />
-    <option name="LAST_COMMIT_MESSAGE" value="Do code-review." />
+    <MESSAGE value="Rename package." />
+    <MESSAGE value="Remove chart title." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove chart title." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
