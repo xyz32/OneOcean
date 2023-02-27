@@ -133,7 +133,6 @@ public class Server {
     }
 
     private JSONArray buildVesselList() {
-        JSONArray result = new JSONArray(vessels.vesselsData.keySet());
-        return result;
+        return new JSONArray(vessels.vesselsData.keySet());
     }
 }
